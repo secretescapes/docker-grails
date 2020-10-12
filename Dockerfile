@@ -13,5 +13,12 @@ RUN apt-get update && \
 
 ENV GRAILS_HOME /usr/lib/jvm/grails
 ENV PATH $GRAILS_HOME/bin:$PATH
-
 ENV JAVA_OPTS "-Xmx3096M -server"
+
+WORKDIR /test
+RUN grails create-app testing && \
+	cd testing && \
+	grails compile && \
+	grails clean-all && \
+	rm -rf /test
+
