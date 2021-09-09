@@ -1,4 +1,4 @@
-FROM openjdk:8-slim-buster
+FROM openjdk:11.0-slim-buster
 
 ENV GRAILS_VERSION 4.0.12
 ENV CONFIG_FLAGS "--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
