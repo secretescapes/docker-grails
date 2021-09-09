@@ -1,6 +1,6 @@
 FROM openjdk:8-slim-buster
 
-ENV GRAILS_VERSION 2.5.4
+ENV GRAILS_VERSION 4.0.12
 ENV CONFIG_FLAGS "--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
 WORKDIR /usr/lib/jvm
 
@@ -19,6 +19,6 @@ WORKDIR /test
 RUN grails create-app testing && \
 	cd testing && \
 	grails compile && \
-	grails clean-all && \
+	grails clean && \
 	rm -rf /test
 
